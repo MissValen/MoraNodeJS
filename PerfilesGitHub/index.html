@@ -18,16 +18,24 @@
 
         <!-- Content -->
         <article class="content">
-            <h1 class="content__title">Search GitHub users</h1>
+            <h1 class="content__title">Buscat Usuarios de GitHub</h1>
             <p>{{message}}</p>
 
             <!-- Search -->
-            <form class="search">
-                <input type="text" class="search__input" required placeholder="Search GitHub users">
-                <input type="submit" class="search__submit" value="Search">
+            <form class="search" v-on:submit.prevent="Buscar">
+                <input v-model="busqueda" type="text" class="search__input" required placeholder="Buscar Usuarios GitHub">
+                <input type="submit" class="search__submit" value="Buscar">
             </form>
 
             <!-- Result -->
+            <div class="result" v-if="result">
+                <h2 class="result__name">Valen Lopez</h2>
+                <img src="gatito.JPG" alt="" class="result__avatar">
+                <p class="result__bio">Aprendiz exitoso graduado de Tecnologia en DSI del SENA
+                    Creador de nuevas apps que revolucionaron la industira de la programacion de las vidas humanas
+                </p><br>
+                <a href="www.sena.edu.co">SENA</a>
+            </div>
             <!-- Error -->
             <div class="result__error"></div>
         </article>
